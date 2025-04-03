@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'Pricedown';
+    src: url('pricedown.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('royal.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Pricedown', Arial, sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    color: #a4d9e7;
+    font-family: 'Pricedown', Arial, sans-serif;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px #000;
+    font-size: clamp(24px, 5vw, 36px);
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #a4d9e7;
+    font-weight: bold;
+    font-family: 'Pricedown', Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: clamp(16px, 3vw, 20px);
+}
+
+nav ul li a:hover {
+    color: #7bb8c7;
+}
+
+#game-table {
+    background: rgba(6, 208, 239, 0.5);
+    border: 5px solid #a4d9e7;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: clamp(10px, 2vw, 20px); /* Зменшуємо padding на малих екранах */
+    position: relative;
+    min-height: 400px;
+    box-sizing: border-box; /* Включаємо border і padding у ширину */
+}
+
+#dice-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.dice {
+    position: relative;
+    width: clamp(50px, 10vw, 66px);
+    height: clamp(50px, 10vw, 66px);
+    transform-style: preserve-3d;
+    transform: translateZ(-33px) rotateY(-45deg) rotateX(-45deg);
+    transition: transform 1s;
+}
+
+.side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, #800000, #ff4040);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+    border: none; /* Прибираємо чорну рамку */
+}
+
+.one { transform: rotateX(0deg) translateZ(clamp(25px, 5vw, 33px)); }
+.two { transform: rotateY(90deg) translateZ(clamp(25px, 5vw, 33px)); }
+.three { transform: rotateX(-90deg) translateZ(clamp(25px, 5vw, 33px)); }
+.four { transform: rotateX(90deg) translateZ(clamp(25px, 5vw, 33px)); }
+.five { transform: rotateY(-90deg) translateZ(clamp(25px, 5vw, 33px)); }
+.six { transform: rotateY(180deg) translateZ(clamp(25px, 5vw, 33px)); }
+
+.dot {
+    position: absolute;
+    width: clamp(8px, 1.5vw, 10px);
+    height: clamp(8px, 1.5vw, 10px);
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.center { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.top-left { top: 10%; left: 10%; }
+.top-right { top: 10%; right: 10%; }
+.bottom-left { bottom: 10%; left: 10%; }
+.bottom-right { bottom: 10%; right: 10%; }
+.top-center { top: 10%; left: 50%; transform: translateX(-50%); }
+.bottom-center { bottom: 10%; left: 50%; transform: translateX(-50%); }
+
+.custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.custom > * {
+    margin: 10px;
+}
+
+.custom > button {
+    font-size: clamp(16px, 3vw, 20px);
+    font-family: 'Pricedown', Arial, sans-serif;
+    width: clamp(200px, 40vw, 250px);
+    height: clamp(50px, 10vw, 60px);
+    color: #a4d9e7;
+    background-color: #000;
+    border: 2px solid #a4d9e7;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.custom > button:hover {
+    background-color: #333;
+}
+
+#player-tables {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.player-table {
+    background: rgba(0, 0, 0, 0.8);
+    color: #a4d9e7;
+    border: 2px solid #a4d9e7;
+    border-radius: 10px;
+    padding: 10px;
+    width: clamp(120px, 25vw, 150px);
+    text-align: center;
+    font-family: 'Pricedown', Arial, sans-serif;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.player-table h3 {
+    margin: 0;
+    font-size: clamp(14px, 3vw, 18px);
+}
+
+.player-table p {
+    margin: 5px 0;
+    font-size: clamp(12px, 2.5vw, 16px);
+}

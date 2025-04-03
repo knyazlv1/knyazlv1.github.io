@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @font-face {
+            font-family: 'Pricedown';
+            src: url('pricedown.ttf') format('truetype');
+        }
+        body {
+            background: url('royal.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Pricedown', Arial, sans-serif;
+            color: #fff;
+        }
+        .rules-container {
+            max-width: 90%;
+            margin: 5vh auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .rules-container h1 {
+            color: #a4d9e7;
+            margin-bottom: 20px;
+            font-family: 'Pricedown', Arial, sans-serif;
+            text-transform: uppercase;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px #000;
+            font-size: clamp(24px, 5vw, 36px);
+        }
+        .rules-container ul {
+            text-align: left;
+            padding-left: 20px;
+        }
+        .rules-container li {
+            margin: 10px 0;
+            color: #fff;
+            font-size: clamp(16px, 3vw, 20px);
+            text-shadow: 1px 1px 2px #000;
+        }
+        .mode-selection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px; /* Додаємо відступ між елементами */
+            text-align: center;
+            margin-top: 30px;
+        }
+        .mode-selection label {
+            font-size: clamp(18px, 4vw, 20px);
+            color: #a4d9e7;
+            font-family: 'Pricedown', Arial, sans-serif;
+            text-shadow: 1px 1px 2px #000;
+        }
+        .mode-selection select {
+            font-size: clamp(16px, 3vw, 20px);
+            font-family: 'Pricedown', Arial, sans-serif;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #000;
+            color: #a4d9e7;
+            border: 2px solid #a4d9e7;
+            transition: background-color 0.3s ease;
+        }
+        .mode-selection select:hover {
+            background-color: #333;
+        }
+        .mode-selection button {
+            font-size: clamp(16px, 3vw, 20px);
+            font-family: 'Pricedown', Arial, sans-serif;
+            width: clamp(120px, 30vw, 150px);
+            height: clamp(40px, 10vw, 50px);
+            color: #a4d9e7;
+            background-color: #000;
+            border: 2px solid #a4d9e7;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .mode-selection button:hover {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dice.html">Dice Game</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="rules-container">
+            <h1>Правила гри "1000 у кістки з кубиками"</h1>
+            <ul>
+                <li>Для гри вам знадобляться 5 гральних кубиків.</li>
+                <li>Гра проводиться по черзі, кожен гравець кидає усі кубики одночасно.</li>
+                <li>Після кидка кубиків аналізується комбінація значень ними.</li>
+                <li>За кожну комбінацію гравець отримує певну кількість очок:
+                    <ul>
+                        <li>Один кубик з одиницею – 10 очок</li>
+                        <li>Один кубик із п'ятіркою – 5 очок</li>
+                        <li>Три кубики з однаковими значеннями – від 20 до 100 очок залежно від значення</li>
+                        <li>П'ять кубиків з однаковими значеннями – від 200 до 1000 очок залежно від значення</li>
+                    </ul>
+                </li>
+                <li>Для початку гри потрібно набрати 50+ очок за один кидок, інакше очки не зараховуються, доки не буде досягнуто цієї умови.</li>
+                <li>Гра ведеться до набору 1000 балів.</li>
+                <li>Переможцем стає гравець, який першим набере 1000 балів.</li>
+            </ul>
+        </div>
+        <div class="mode-selection">
+            <label for="player-mode">Режим гри:</label>
+            <select id="player-mode">
+                <option value="2">2 гравці</option>
+                <option value="3">3 гравці</option>
+                <option value="4">4 гравці</option>
+                <option value="1">Гравець проти комп'ютера</option>
+            </select>
+            <button id="start-game">Start Game</button>
+        </div>
+    </main>
+    <script>
+        document.getElementById('start-game').addEventListener('click', () => {
+            const mode = document.getElementById('player-mode').value;
+            window.location.href = `dice.html?mode=${mode}`;
+        });
+    </script>
+</body>
+</html>

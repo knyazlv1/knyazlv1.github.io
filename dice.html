@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dice.html">Dice Game</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h1>Custom Dice Game</h1>
+        <div id="current-player-message" style="color: #a4d9e7; font-size: clamp(16px, 3vw, 20px); margin: 10px 0;"></div>
+        <div id="game-table">
+            <div id="player-tables"></div>
+            <div id="dice-container"></div>
+            <div class="custom">
+                <button id="spin">Roll Dice!</button>
+                <button id="restart">Restart Game</button>
+            </div>
+            <div id="winner-message" style="display: none; color: #a4d9e7; font-size: clamp(18px, 4vw, 24px); margin-top: 20px;"></div>
+        </div>
+    </main>
+
+    <script src="dice.js"></script>
+</body>
+</html>
